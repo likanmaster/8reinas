@@ -33,14 +33,23 @@ Scanner sc = new Scanner(System.in);
     } 
     
      public void calcularfittnes(){//funcion para calcular el fittnes de cada individuo
-        
-       
+         for (int i=0;i<10;i++){//cantidad de  tableros
+            for (int j=0;j<8;j++){
+           
+            
+            }
+         }     
     } 
     public static void main(String[] args) {
         // TODO code application logic here
+        int semilla=8;
+        int tpoblacion=100;
+        int pcruza=10;
+        int pmutaccion=10;
+        int iteraciones=10;
         int[] tablero = new int[8];//tablero de 8
         
-        for (int i=0;i<10;i++){//cantidad de  tableros
+        for (int i=0;i<tpoblacion;i++){//cantidad de  tableros
             for (int j=0;j<8;j++){
                   tablero[j] =(int)(Math.random()*10);
                   System.out.print(" ");
