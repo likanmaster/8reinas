@@ -19,22 +19,32 @@ Scanner sc = new Scanner(System.in);
     /**
      * @param args the command line arguments
      */
-    public void randomceroyuno() {//funcion para generar un numer random  entre 0 y 1
+    public void randomceroyuno(){//funcion para generar un numer random  entre 0 y 1
     
             
         int tablero =(int)(Math.random());
         System.out.println(tablero); 
     }
 
-   
+    public void randomunoyn(){//funcion para generar un numer random  entre 1 y n
+        
+        int tablero =(int)(Math.random());
+        System.out.println(tablero); 
+    } 
+    
+     public void calcularfittnes(){//funcion para calcular el fittnes de cada individuo
+        
+       
+    } 
     public static void main(String[] args) {
         // TODO code application logic here
-        int[] tablero = new int[8];
-        for (int i=0;i<8;i++){//poblaciones
+        int[] tablero = new int[8];//tablero de 8
+        
+        for (int i=0;i<10;i++){//cantidad de  tableros
             for (int j=0;j<8;j++){
-                  tablero[i] =(int)(Math.random()*10);
+                  tablero[j] =(int)(Math.random()*10);
                   System.out.print(" ");
-                  System.out.print(tablero[i]);
+                  System.out.print(tablero[j]);
              }
              System.out.println();
         }
