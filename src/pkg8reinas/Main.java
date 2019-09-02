@@ -43,10 +43,11 @@ Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         // TODO code application logic here
         int semilla=8;
-        int tpoblacion=100;
+        int tpoblacion=10;
         int pcruza=10;
         int pmutaccion=10;
         int iteraciones=10;
+                
         int[] tablero = new int[8];//tablero de 8
         
         for (int i=0;i<tpoblacion;i++){//cantidad de  tableros
