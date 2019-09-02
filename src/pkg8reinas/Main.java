@@ -1,9 +1,13 @@
+package pkg8reinas;
+import java.util.*;
+import java.io.*;
+import java.math.*;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg8reinas;
+
 
 /**
  *
@@ -16,6 +20,7 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        System.out.println("hola mundo");
     }
     
 }
