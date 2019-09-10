@@ -14,23 +14,29 @@ import java.math.*;
  * @author likanmaster
  */
 public class Main {
-Scanner sc = new Scanner(System.in);   
-
-    /**
-     * @param args the command line arguments
-     */
-    public void randomceroyuno(){//funcion para generar un numer random  entre 0 y 1
+//Scanner sc = new Scanner(System.in);   
+  
+public static int randomabin(int semilla){ // con a cota inferior y b cota superior (ENTEROS)
+  Random r = new Random();
+      int valorDado = r.nextInt(2);  // Entre 0 y 1.
+    return valorDado;
     
-            
-        int tablero =(int)(Math.random());
-        System.out.println(tablero); 
-    }
+    
+   }
+  
+   public static double randomadec(int a, int b, int semilla){ // con a cota inferior y b cota superior (decimales)
+    Random rnd = new Random(semilla);
+    Double rndInd = b + ( a - b ) * rnd.nextDouble();
+    return rndInd;
+   }
+     public static int randomanint(int a, int b, int semilla){ // con a cota inferior y b cota superior (ENTEROS)
+    Random rnd = new Random(semilla);
+    int rndInd = (int)(b + ( a - b ) * rnd.nextDouble());
+    return rndInd;
+   }
+ 
 
-    public void randomunoyn(){//funcion para generar un numer random  entre 1 y n
-        
-        int tablero =(int)(Math.random());
-        System.out.println(tablero); 
-    } 
+
     
      public void calcularfittnes(){//funcion para calcular el fittnes de cada individuo
          for (int i=0;i<10;i++){//cantidad de  tableros
@@ -42,22 +48,17 @@ Scanner sc = new Scanner(System.in);
     } 
     public static void main(String[] args) {
         // TODO code application logic here
-        int semilla=8;
+        int semilla=4524;
         int tpoblacion=10;
         int pcruza=10;
         int pmutaccion=10;
         int iteraciones=10;
-                
-        int[] tablero = new int[8];//tablero de 8
         
-        for (int i=0;i<tpoblacion;i++){//cantidad de  tableros
-            for (int j=0;j<8;j++){
-                  tablero[j] =(int)(Math.random()*10);
-                  System.out.print(" ");
-                  System.out.print(tablero[j]);
-             }
-             System.out.println();
-        }
+                
+        int tabo = randomabin(semilla);//tablero de 8
+    double tabo2 = randomadec(0,10,semilla);
+         System.out.println(tabo); 
+        System.out.println(tabo2); 
     }
    
     
