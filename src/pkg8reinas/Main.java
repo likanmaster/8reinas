@@ -16,20 +16,19 @@ import java.math.*;
 public class Main {
 //Scanner sc = new Scanner(System.in);   
   
-public static int randomabin(int semilla){ // con a cota inferior y b cota superior (ENTEROS)
+public static int randomabin(int semilla){ //numero randomico entre 0 y uno. depende de la semilla
   Random r = new Random();
       int valorDado = r.nextInt(2);  // Entre 0 y 1.
     return valorDado;
     
-    
    }
   
-   public static double randomadec(int a, int b, int semilla){ // con a cota inferior y b cota superior (decimales)
+   public static double randomadec(int a, int b, int semilla){ // random con rago de [a b](decimales)
     Random rnd = new Random(semilla);
     Double rndInd = b + ( a - b ) * rnd.nextDouble();
     return rndInd;
    }
-     public static int randomanint(int a, int b, int semilla){ // con a cota inferior y b cota superior (ENTEROS)
+     public static int randomanint(int a, int b, int semilla){ //  random con rago de [a b](decimales)
     Random rnd = new Random(semilla);
     int rndInd = (int)(b + ( a - b ) * rnd.nextDouble());
     return rndInd;
@@ -38,7 +37,7 @@ public static int randomabin(int semilla){ // con a cota inferior y b cota super
 
 
     
-     public void calcularfittnes(){//funcion para calcular el fittnes de cada individuo
+    public void calcularfittnes(){//funcion para calcular el fittnes de cada individuo
          for (int i=0;i<10;i++){//cantidad de  tableros
             for (int j=0;j<8;j++){
            
