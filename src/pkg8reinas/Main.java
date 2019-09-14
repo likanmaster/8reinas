@@ -34,14 +34,6 @@ public static int randomabin(int semilla){ //numero randomico entre 0 y uno. dep
     return rndInd;
    }
  
-    public void calcularfittnes(){//funcion para calcular el fittnes de cada individuo
-         for (int i=0;i<10;i++){//cantidad de  tableros
-            for (int j=0;j<8;j++){
-           
-            
-            }
-         }     
-    } 
    public static int[] RandomizeArray(int a, int b){
 		Random rgen = new Random();  // creamos array de a - b onrdenados aleatoriamente sin repetirse 	
 		int size = b-a+1;
@@ -75,11 +67,53 @@ public static int randomabin(int semilla){ //numero randomico entre 0 y uno. dep
         cantidadchoques=Math.abs(cantidadchoques-tablero.length);
     return cantidadchoques;
     }
+  
+    static int ruolette(ArrayList<Integer> fitvalores, ArrayList<int[]> poblacion, int semilla){  // funcion de ruleta para elegir un tableros
+        int totalfitnes = 0;
+        int indtablero = 0;
+        int semi=semilla;
+        int maxfitnes=0;
+        int tpoblacion=poblacion.size();
+        double []nuevofitness = new double[fitvalores.size()];
+      
+        ArrayList <Double> proporcion = new ArrayList<>();//proporcion de la ruleta
+        ArrayList <Double> ruleta = new ArrayList<>();
+        //obtener el max fitnes
+        for(int i=0;i<fitvalores.size();i++){  //total de fitnes
+          totalfitnes=totalfitnes+fitvalores.get(i);
+            }
+        for(int i=0;i<fitvalores.size();i++){  //poner datos en el nuevo fittnes inverso
+          double pro=tpoblacion-fitvalores.get(i);
+             nuevofitness[i]=pro;
+           }   
+       for(int i=0;i<fitvalores.size();i++){  //poner datos en el array proporcion
+          double pro=nuevofitness[i]/totalfitnes;
+             proporcion.add(pro);
+           } 
+     
+     
+     ruleta.add(proporcion.get(0));
+       for(int i=1;i<fitvalores.size();i++){  //poner datos en el array proporcion
+        ruleta.add(ruleta.get(i-1)+proporcion.get(i));
+          }
+   
+     
+        double num=randomadec(0,1,semi);
+         
+        for(int i=0;i<fitvalores.size();i++){  //poner datos en el array proporcion
+          if(num<ruleta.get(i)){
+              indtablero=i;
+           }
+      
+          }
+       return indtablero;//esto devuelve el indice del tablero  ganador en la ruleta
+    }
+    
    
     public static void main(String[] args) {
         // TODO code application logic here
         int semilla=4524;
-        int tpoblacion=100;
+        int tpoblacion=5;
         int pcruza=10;
         int pmutaccion=10;
         int iteraciones=10;
@@ -92,13 +126,16 @@ public static int randomabin(int semilla){ //numero randomico entre 0 y uno. dep
             poblacion.add(tablero);
             int fit=fittnes(tablero);
             fitvalores.add(fit);
-            
-           
-            System.out.println(Arrays.toString(tablero));
+             System.out.println(Arrays.toString(tablero));
             System.out.println( fit);
         }
-        
-        
+        //selecionamos dos padres por medio de la ruleta
+        int padre1=ruolette(fitvalores,poblacion, semilla);
+        System.out.println(padre1);
+        int padre2=ruolette(fitvalores,poblacion, semilla);
+        System.out.println(padre2);
+         //realiza la cruza
+        //se crea una nueva generacion
        
 
 
