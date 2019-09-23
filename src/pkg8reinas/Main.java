@@ -333,12 +333,11 @@ public class Main {
              else {
                  //recibe las variables como strings
 	String ssemilla     =args[0];           
-        String stpoblacion  =args[1];
-        String spcruza      =args[2];
-        String spmutaccion  =args[3];
-        String siteraciones =args[4];
-        String sttablero    =args[5];
-		
+        String sttablero    =args[1];
+        String stpoblacion  =args[2];
+        String siteraciones =args[3];
+        String spcruza      =args[4];
+        String spmutaccion  =args[5];
             //cambiar de string a enteros y decimales
             
             int isemilla = Integer.parseInt(ssemilla);
