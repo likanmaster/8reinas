@@ -309,7 +309,7 @@ public class Main {
         ArrayList<Integer> fitvalores = new ArrayList<>();
         ArrayList<int []>  poblacion  = new ArrayList<>();//ponemos tableros a la poblacion  inicial
         ArrayList<int []>  nuevagen  = new ArrayList<>();
-        Scanner sc=new Scanner(System.in);
+        /*Scanner sc=new Scanner(System.in);
             System.out.println("Ingrese semilla: ");
             semilla=sc.nextInt();
             System.out.println("Ingrese numero de reinas ");
@@ -323,7 +323,38 @@ public class Main {
             System.out.println("Ingrese probabilidad de mutacion (con coma en un rango de 0,0 a 1,0): ");
             pmutaccion=sc.nextDouble();
             System.out.println();
+            */
+             if (args.length <6) { //si hay más de 1 parámetro
+			System.out.println("Debe ingresar 6 variables (semilla reinas poblacion generaciones probcruza probmutacion)");
+			
+		} 
+             
+             
+             else {
+                 //recibe las variables como strings
+	String ssemilla     =args[0];           
+        String stpoblacion  =args[1];
+        String spcruza      =args[2];
+        String spmutaccion  =args[3];
+        String siteraciones =args[4];
+        String sttablero    =args[5];
+		
+            //cambiar de string a enteros y decimales
             
+            int isemilla = Integer.parseInt(ssemilla);
+            int itpoblacion = Integer.parseInt(stpoblacion);
+            double ipcruza = Double.parseDouble(spcruza);
+            double ipmutaccion = Double.parseDouble(spmutaccion);
+            int iiteraciones = Integer.parseInt(siteraciones);
+            int itablero = Integer.parseInt(sttablero);
+            // le pasamos el valor a las variables
+            
+            semilla     =isemilla;           
+            tpoblacion  =itpoblacion;
+            pcruza      =ipcruza;
+            pmutaccion  =ipmutaccion;
+            iteraciones =iiteraciones;
+            ttablero    =itablero;
         //inicializamos la poblacion de tableros randomicamente 1ra generacion
             for(int i=0;i<tpoblacion;i++){
             int[] tablero= RandomizeArray(0, ttablero);
@@ -410,7 +441,7 @@ public class Main {
             fitvalores.add(padre1,fit);
       //se crea una nueva generacion
      }//fin llenado de nueva generacion
-   
+   }
     }
 
 }
