@@ -19,19 +19,19 @@ public class Main {
       int valor = r.nextInt(2);  // Entre 0 y 1.
     return valor;
    }
-    // random con rango de [a b](decimales)
+    // random con rango de [a b](decimales) para comparar la probabilidad de cruza y mutacion
     public static double randomadec(int a, int b, int semilla){ 
     Random r = new Random(semilla);
     Double ri = b + ( a - b ) * r.nextDouble(); 
     return ri;
    }
-    //  random con rago de [a b](enter0)
+    //  random con rango de [a b](enter0) para la posicion de los vectores 
     public static int randomanint(int a, int b, int semilla){ 
     Random rnd = new Random(semilla);
     int rndInd = (int)(b + ( a - b ) * rnd.nextDouble());
     return rndInd;
    }
- // creamos array de a - b onrdenados aleatoriamente sin repetirse
+ // creamos array de a - b onrdenados aleatoriamente sin repetirse para generar el tablero
     public static int[] RandomizeArray(int a, int b){
 		Random rgen = new Random();   	
 		int size = b-a+1;
@@ -52,7 +52,7 @@ public class Main {
  
 		return array;
 	}
-    // funcion de fittnes para obtener la cantidad de choques
+    // funcion de fittnes para obtener la cantidad de choques que hay en los tableros
     public static int fittnes(int [] tablero){  
     int cantidadchoques=0;          // si hay dos numeros iguales,suma un choque
         for(int i=0;i<tablero.length;i++){  
