@@ -65,7 +65,7 @@ public class Main {
         cantidadchoques=Math.abs(cantidadchoques-tablero.length);
     return cantidadchoques;
     }
-  // funcion de ruleta para elegir un tableros
+  // funcion j ruleta para elegir un tableros
     public static int ruolette(ArrayList<Integer> fitvalores, ArrayList<int[]> poblacion, int semilla){  
         int totalfitnes = 0;
         int totalfitnesnuevo = 0;
@@ -74,7 +74,7 @@ public class Main {
         int tpoblacion=poblacion.size();
         int []nuevofitness = new int [fitvalores.size()];
         double []nproporcion = new double [fitvalores.size()];
-        ArrayList <Double> proporcion = new ArrayList<>();//proporcion de la ruleta
+        ArrayList <Double> proporcion = new ArrayList<>();//proporcion j la ruleta
         ArrayList <Double> ruleta = new ArrayList<>();
         //obtener el max fitnes
         for(int i=0;i<fitvalores.size();i++){  //total de fitnes
@@ -309,7 +309,7 @@ public class Main {
         ArrayList<Integer> fitvalores = new ArrayList<>();
         ArrayList<int []>  poblacion  = new ArrayList<>();//ponemos tableros a la poblacion  inicial
         ArrayList<int []>  nuevagen  = new ArrayList<>();
-       /* Scanner sc=new Scanner(System.in);
+        Scanner sc=new Scanner(System.in);
             System.out.println("Ingrese semilla: ");
             semilla=sc.nextInt();
             System.out.println("Ingrese numero de reinas ");
@@ -323,7 +323,7 @@ public class Main {
             System.out.println("Ingrese probabilidad de mutacion (con coma en un rango de 0,0 a 1,0): ");
             pmutaccion=sc.nextDouble();
             System.out.println();
-         */  
+         /*
              if (args.length <6) { //si hay más de 1 parámetro
 			System.out.println("Debe ingresar 6 variables (semilla reinas poblacion generaciones probcruza probmutacion)");
 			
@@ -353,7 +353,8 @@ public class Main {
             pcruza      =ipcruza;
             pmutaccion  =ipmutaccion;
             iteraciones =iiteraciones;
-            ttablero    =itablero;
+            ttablero    =itablero;*/
+
              int gen=1;
              boolean find=false;
         //inicializamos la poblacion de tableros randomicamente 1ra generacion
@@ -365,7 +366,8 @@ public class Main {
                   //dibujo(tablero);
                    System.out.println(Arrays.toString(tablero));
                   System.out.println("En generacion 0");
-                  find=true; 
+                  find=true;
+                  System.out.println(0);
                   break;
             }
             fitvalores.add(fit);
@@ -442,6 +444,7 @@ public class Main {
                   //dibujo(hijolistouno);
                   System.out.println(Arrays.toString(hijolistouno));
                   System.out.println("En generacion "+(kk+1));
+                  System.out.println(0);
                   find=true;
                   break;
        }
@@ -450,6 +453,7 @@ public class Main {
                   //dibujo(hijolistouno);
                   System.out.println(Arrays.toString(hijolistodos));
                   System.out.println("En generacion "+(kk+1));
+                  System.out.println(0);
                   find=true;
                   break;
        }
@@ -478,4 +482,4 @@ public class Main {
    }
     }
 
-}
+//}
