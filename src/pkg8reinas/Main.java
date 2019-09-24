@@ -309,7 +309,7 @@ public class Main {
         ArrayList<Integer> fitvalores = new ArrayList<>();
         ArrayList<int []>  poblacion  = new ArrayList<>();//ponemos tableros a la poblacion  inicial
         ArrayList<int []>  nuevagen  = new ArrayList<>();
-        Scanner sc=new Scanner(System.in);
+       /* Scanner sc=new Scanner(System.in);
             System.out.println("Ingrese semilla: ");
             semilla=sc.nextInt();
             System.out.println("Ingrese numero de reinas ");
@@ -323,7 +323,7 @@ public class Main {
             System.out.println("Ingrese probabilidad de mutacion (con coma en un rango de 0,0 a 1,0): ");
             pmutaccion=sc.nextDouble();
             System.out.println();
-         /*
+         */
              if (args.length <6) { //si hay más de 1 parámetro
 			System.out.println("Debe ingresar 6 variables (semilla reinas poblacion generaciones probcruza probmutacion)");
 			
@@ -353,7 +353,7 @@ public class Main {
             pcruza      =ipcruza;
             pmutaccion  =ipmutaccion;
             iteraciones =iiteraciones;
-            ttablero    =itablero;*/
+            ttablero    =itablero;
 
              int gen=1;
              boolean find=false;
@@ -482,4 +482,4 @@ public class Main {
    }
     }
 
-//}
+}
