@@ -309,7 +309,7 @@ public class Main {
         ArrayList<Integer> fitvalores = new ArrayList<>();
         ArrayList<int []>  poblacion  = new ArrayList<>();//ponemos tableros a la poblacion  inicial
         ArrayList<int []>  nuevagen  = new ArrayList<>();
-        /*Scanner sc=new Scanner(System.in);
+       /* Scanner sc=new Scanner(System.in);
             System.out.println("Ingrese semilla: ");
             semilla=sc.nextInt();
             System.out.println("Ingrese numero de reinas ");
@@ -323,7 +323,7 @@ public class Main {
             System.out.println("Ingrese probabilidad de mutacion (con coma en un rango de 0,0 a 1,0): ");
             pmutaccion=sc.nextDouble();
             System.out.println();
-            */
+         */  
              if (args.length <6) { //si hay más de 1 parámetro
 			System.out.println("Debe ingresar 6 variables (semilla reinas poblacion generaciones probcruza probmutacion)");
 			
@@ -354,21 +354,25 @@ public class Main {
             pmutaccion  =ipmutaccion;
             iteraciones =iiteraciones;
             ttablero    =itablero;
+             int gen=1;
+             boolean find=false;
         //inicializamos la poblacion de tableros randomicamente 1ra generacion
             for(int i=0;i<tpoblacion;i++){
             int[] tablero= RandomizeArray(0, ttablero);
             poblacion.add(tablero);
             int fit=fittnes(tablero);
             if (fit==0) {
-                  dibujo(tablero);
+                  //dibujo(tablero);
+                   System.out.println(Arrays.toString(tablero));
+                  System.out.println("En generacion 0");
+                  find=true; 
                   break;
             }
             fitvalores.add(fit);
         }
+            
         
-        
-        
-        for (int kk = 0; kk < tpoblacion/2; kk++) {
+        for (int kk = 0; kk < iteraciones; kk++) {
         //selecionamos dos padres por medio de la ruleta . solo obtenemos el iindice del tablero
         int padre1=ruolette(fitvalores,poblacion, semilla); 
         int padre2=ruolette(fitvalores,poblacion, semilla);
@@ -384,9 +388,7 @@ public class Main {
         // System.out.println("padre 2 "+padre2);
         //random decimal para ver si se cruzan los padres
         double  randomdeccc=randomadec(0,1,semilla);
-        boolean cruza;
-        //obtenemos la probabilidad de cruza
-        cruza=probabilidadcruza(pcruza, randomdeccc);
+    
          //obtenemos la mitad para hacer a los hijos
         int mitad=randomanint(0,ttablero, semilla);
         //recuperar padre y madre seleccionados
@@ -395,6 +397,9 @@ public class Main {
         int [] hijo1= new int[ttablero];
         int [] hijo2= new int[ttablero];
         //realizamos la cruza
+        boolean cruza;
+        //obtenemos la probabilidad de cruza
+        cruza=probabilidadcruza(pcruza, randomdeccc);
         if(cruza==true){
               hijo1 =cruza( padrek, padres,  ttablero, mitad, 1);
               hijo2 =cruza( padrek, padres,  ttablero, mitad, 2);
@@ -433,13 +438,43 @@ public class Main {
        poblacion.add(padre1, hijolistouno);
        poblacion.add(padre2, hijolistodos);
        int fit=fittnes(hijolistouno);
-            if (fit==0) {
-                  dibujo(hijolistouno);
+       if (fit==0) {
+                  //dibujo(hijolistouno);
+                  System.out.println(Arrays.toString(hijolistouno));
+                  System.out.println("En generacion "+(kk+1));
+                  find=true;
                   break;
-            }
-            fitvalores.add(padre1,fit);
+       }
+       int fiti=fittnes(hijolistodos);
+       if (fiti==0) {
+                  //dibujo(hijolistouno);
+                  System.out.println(Arrays.toString(hijolistodos));
+                  System.out.println("En generacion "+(kk+1));
+                  find=true;
+                  break;
+       }
+       
+            
+       fitvalores.add(padre1,fit);
+       fitvalores.add(padre2,fiti);
       //se crea una nueva generacion
      }//fin llenado de nueva generacion
+                 
+        int mejor=100;
+        
+        for(int i = 0; i < fitvalores.size(); i++){
+	    if(fitvalores.get(i)<mejor){
+                mejor=fitvalores.get(i);
+        	}
+			
+	}
+        int [] mejorcito=obtenerpadre(poblacion, ttablero, mejor);
+        if (find==false) {
+                     
+                   
+                      System.out.print("la mejor solucion es ");
+                      System.out.println(Arrays.toString(mejorcito));
+                 }
    }
     }
 
