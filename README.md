@@ -7,34 +7,20 @@ La funcionalidad del programa consiste en crear una población donde los individ
 Los parametros de entrada del algoritmo son: la semilla, el número de reinas, el tamaño de la población, el número de generaciones, la probabilidad de cruza y por ultimo la probabilidad de mutación.
 
 Para la ejecución del algoritmo se deben seguir los siguientes pasos:
-Para poder realizar los siguientes paso primero se debe abrir la terminal de Linuc, y luego:
 
-- Lo primero es crear una carpeta en tu computadora, que servirá como un repositorio local, se debe tener en cuenta que el nombre del repositorio remoto y el repositorio local deben tener el mismo nombre, para este paso se puede utilizar el siguiente comando:
+- Primero abrir la terminal de Linux
 
-            git init NombreCarpeta 
- 
- Donde NombreCarpeta corresponde al nombre que se le quiere dar a la carpeta donde se almacenara el repositorio, por ejemplo:
-     
-            git init n_reinas
-
- Este comando creara una carpeta con el nombre n_reinas.
- 
- - Luego si la carpeta se inicializa con exito se desplegara por pantalla un mensaje similar a:
- 
-            Initialized empty Git repository in /home/tu_usuario/n_reinas/.git/
-
-          
 - Luego se debe clonar el repositorio remoto en el repositorio local utilizando el siguiente comando:
  
           git clone https://github.com/likanmaster/8reinas.git
 
-- Para poder clonar el repositorio luego de ejecutar el comando anterior, se solicitara el nombre de usuario y contraseña que deben ser ingresados por la persona que esta ejecutando el algoritm
+- Para poder clonar el repositorio luego de ejecutar el comando anterior, se solicitara el nombre de usuario y contraseña que deben ser ingresados por la persona que esta ejecutando el algoritmo
  
 - El siguiente paso es acceder a la carpeta del repositorio local que se creo inicialmente, para esto es necesario cambiarse de directorio con el comando cd, como el siguiente ejemplo, en caso de que la carpeta se llame n_reinas se de usar el comando de la siguiente forma:
  
            cd n_reinas/src/pkg8reinas
 
-- Luego primero se debe compilar con la siguiente instrucción
+- Luego primero se debe compilar el programa con la siguiente instrucción
 
                 javac Main.java
                
