@@ -30,16 +30,17 @@ Para poder realizar los siguientes paso primero se debe abrir la terminal de Lin
 - Luego se debe clonar el repositorio remoto en el repositorio local utilizando el siguiente comando:
  
           - git clone https://github.com/likanmaster/8reinas.git
- 
- 5- 
- 
- 
- 
-- Para ejecutar este código se debe ingresar en la terminal de Linux
+
 - 
+ 
+ 
 
 
-Primero se debe compilar con la siguiente instrucción
-javac Main.java
-Una vez compilado el programa se debe ejecutar ingresando los parametros de entrada mencionados anteriormente como por ejemplo:
-java Main(2000,8,2000,100,0.5,0.6)
+
+- Primero se debe compilar con la siguiente instrucción
+
+               - javac Main.java
+               
+- Una vez compilado el programa se debe ejecutar ingresando los parametros de entrada mencionados anteriormente como por ejemplo:
+
+               - java Main(2000,8,2000,100,0.5,0.6)
