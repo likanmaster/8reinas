@@ -226,7 +226,7 @@ public class Main {
         }
         
         for (int i = 0; i <repetidos.size(); i++) {
-            System.out.println("repetidos finalmente  "+ repetidos.get(i) );
+           // System.out.println("repetidos finalmente  "+ repetidos.get(i) );
         }
         int a=0;
           for (int i = 0; i <=ttablero; i++) {
@@ -255,20 +255,38 @@ public class Main {
         }
         for (int i = 0; i <ttablero; i++) {
             if (auscio[i]==0) {
-                 System.out.println("falta el numero "+(i));
+                // System.out.println("falta el numero "+(i));
                  faltantes.add(i);
             }
         }
-        
+    
        return hijor;
     }
    //funcion que repara un hijo si este tiene dos numeros iguales, esta si, es decir choques verticales
     public static int[]reparacion2(int[] hijo,int ttablero){
-    int[] hijor= RandomizeArray(0, ttablero);
+    int aux;
+    int cont=0;
+     int[] hijor=hijo;
+        for(int i=0;i<=ttablero;i++){
+       aux=hijo[i];
+            for(int j=0;j<=ttablero;j++){
+                  if(aux==hijo[j]){
+                   cont=cont+1;
+                  // System.out.println("contador "+cont+" se repite el hijo " +hijo[j]);
+                  }
+                  if (cont>=2) {
+                 hijor= RandomizeArray(0, ttablero); 
+                 } 
+             
+            }
+           cont=0;  
+        }
+        
+        
        return hijor;
     }
    // funcion que intercambia dos numeros en un vector
-    private static int[] mutacion(int[] hijo1, int ttablero,int num1,int num2, double prob,double pmutacion) {
+    public static int[] mutacion(int[] hijo1, int ttablero,int num1,int num2, double prob,double pmutacion) {
            int aux;
         if (prob<pmutacion) {
         for (int i = 0; i <ttablero; i++) {
@@ -299,7 +317,7 @@ public class Main {
     //funcion que dibuja una matriz con caras blancas(casillas vacias), y caras negras(con reinas)
     public static void main(String[] args) {
         // variables iniciales
-        int    semilla     ;           
+        int    semilla      ;           
         int    tpoblacion  ;
         double pcruza      ;
         double pmutaccion  ;
@@ -308,7 +326,7 @@ public class Main {
         ArrayList<Integer> fitvalores = new ArrayList<>();
         ArrayList<int []>  poblacion  = new ArrayList<>();//ponemos tableros a la poblacion  inicial
         ArrayList<int []>  nuevagen  = new ArrayList<>();
-       /* Scanner sc=new Scanner(System.in);
+            /*Scanner sc=new Scanner(System.in);
             System.out.println("Ingrese semilla: ");
             semilla=sc.nextInt();
             System.out.println("Ingrese numero de reinas ");
@@ -321,8 +339,8 @@ public class Main {
             pcruza=sc.nextDouble();
             System.out.println("Ingrese probabilidad de mutacion (con coma en un rango de 0,0 a 1,0): ");
             pmutaccion=sc.nextDouble();
-            System.out.println();
-         */
+            System.out.println();*/
+         
              if (args.length <6) { //si hay más de 1 parámetro
 			System.out.println("Debe ingresar 6 variables (semilla reinas poblacion generaciones probcruza probmutacion)");
 			
@@ -353,7 +371,7 @@ public class Main {
             pmutaccion  =ipmutaccion;
             iteraciones =iiteraciones;
             ttablero    =itablero;
-
+/**/
              int gen=1;
              boolean find=false;
         //inicializamos la poblacion de tableros randomicamente 1ra generacion
@@ -363,28 +381,39 @@ public class Main {
             int fit=fittnes(tablero);
             if (fit==0) {
                   //dibujo(tablero);
-                   System.out.println(Arrays.toString(tablero));
-                  System.out.println("En generacion 0");
+                  System.out.println(Arrays.toString(tablero));
+                  System.out.println("En generacion e");
+                  dibujo(tablero);
                   find=true;
-                  System.out.println(0);
+                 
                   break;
             }
             fitvalores.add(fit);
-        }
+           }//fin llenado de la poblacion inicial
             
         
-        for (int kk = 0; kk < iteraciones; kk++) {
+        
+       //acá construiriamos 1 generacion
+       int m = 0;
+        if (find==false){
+            for (int i = 0; i < iteraciones; i++) {
+           m++;
+        for (int kk = 0; kk < tpoblacion; kk++) {
         //selecionamos dos padres por medio de la ruleta . solo obtenemos el iindice del tablero
         int padre1=ruolette(fitvalores,poblacion, semilla); 
         int padre2=ruolette(fitvalores,poblacion, semilla);
         // System.out.println("padre 1 "+padre1);
         //volvemos a elegir el padre 2 si es igual al padre 1
-        int semilla2=10;
-        while (padre2==padre1) {
-               padre2=ruolette(fitvalores,poblacion, semilla2);
-               semilla2=semilla2*2;
-         //System.out.println("padre 2 "+ padre2);
-        }
+
+        if (padre2==padre1) {
+                if (padre1==poblacion.size()) {
+                    padre2=padre1-1;
+                   // System.out.println("padres iguales pero se cambió");
+                }
+                else{
+                    padre2=padre1+1;
+                }
+            }
        
         // System.out.println("padre 2 "+padre2);
         //random decimal para ver si se cruzan los padres
@@ -420,11 +449,15 @@ public class Main {
         int num1=randomanint(0, ttablero,  semilla);
         int num2=randomanint(0, ttablero,  semilla);
         //nos aseguramon que no salga el mismo numero
-        int semilla3=10;
-        while (num1==num2) {
-               num2=randomanint(0, ttablero,  semilla3);
-               semilla3=semilla3*2;
-        }
+        if (num1==num2) {
+                if (num1==ttablero) {
+                    num2=num1-1;
+                   
+                }
+                else{
+                    num2=num1+1;
+                }
+            }
         
       // System.out.println("numero 1 "+num1);
       // System.out.println("numero 2 "+num2);
@@ -442,8 +475,9 @@ public class Main {
        if (fit==0) {
                   //dibujo(hijolistouno);
                   System.out.println(Arrays.toString(hijolistouno));
-                  System.out.println("En generacion "+(kk+1));
-                  System.out.println(0);
+                  System.out.println("En generacion "+(m));
+                  dibujo(hijolistouno);
+                 // System.out.println(0);
                   find=true;
                   break;
        }
@@ -451,8 +485,8 @@ public class Main {
        if (fiti==0) {
                   //dibujo(hijolistouno);
                   System.out.println(Arrays.toString(hijolistodos));
-                  System.out.println("En generacion "+(kk+1));
-                  System.out.println(0);
+                  System.out.println("En generacion "+(m));
+                 // System.out.println(0);
                   find=true;
                   break;
        }
@@ -461,8 +495,8 @@ public class Main {
        fitvalores.add(padre1,fit);
        fitvalores.add(padre2,fiti);
       //se crea una nueva generacion
-     }//fin llenado de nueva generacion
-                 
+     }//fin llenado de una nueva poblacion
+       }//fin de la creacion de generaciones (while)          
         int mejor=100;
         
         for(int i = 0; i < fitvalores.size(); i++){
@@ -475,10 +509,23 @@ public class Main {
         if (find==false) {
                      
                    
-                      System.out.print("la mejor solucion es ");
+                      System.out.println("la mejor solucion es ");
+                      dibujo(mejorcito);
                       System.out.println(Arrays.toString(mejorcito));
+                                            System.out.print("generaciones escaneadas  "+m);
                  }
    }
     }
+  }
+    }
 
-}
+
+
+
+
+
+
+
+
+
+//}
