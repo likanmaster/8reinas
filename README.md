@@ -25,7 +25,7 @@ Para poder realizar los siguientes paso primero se debe abrir la terminal de Lin
           - cd n_reinas
           
  4- Luego se debe clonar el repositorio remoto en el repositorio local utilizando el siguiente comando:
-          - git clone https://github.com/likanmaster/8reinas
+          - git clone https://github.com/likanmaster/8reinas.git
  
  5- 
  
