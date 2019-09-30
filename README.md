@@ -22,25 +22,24 @@ Para poder realizar los siguientes paso primero se debe abrir la terminal de Lin
  - Luego si la carpeta se inicializa con exito se desplegara por pantalla un mensaje similar a:
  
             Initialized empty Git repository in /home/tu_usuario/n_reinas/.git/
- 
- - El siguiente paso es acceder a la carpeta del reporsitorio, para esto es necesario cambiarse de directorio con el comando cd, como el siguiente ejemplo, en caso de que la carpeta se llame n_reinas se de usar el comando de la siguiente forma:
- 
-           cd n_reinas
+
           
 - Luego se debe clonar el repositorio remoto en el repositorio local utilizando el siguiente comando:
  
           git clone https://github.com/likanmaster/8reinas.git
 
-- 
+- Para poder clonar el repositorio luego de ejecutar el comando anterior, se solicitara el nombre de usuario y contraseña que deben ser ingresados por la persona que esta ejecutando el algoritm
  
+- El siguiente paso es acceder a la carpeta del repositorio local que se creo inicialmente, para esto es necesario cambiarse de directorio con el comando cd, como el siguiente ejemplo, en caso de que la carpeta se llame n_reinas se de usar el comando de la siguiente forma:
  
+           cd n_reinas/src/pkg8reinas
 
-
-
-- Primero se debe compilar con la siguiente instrucción
+- Luego primero se debe compilar con la siguiente instrucción
 
                 javac Main.java
                
 - Una vez compilado el programa se debe ejecutar ingresando los parametros de entrada mencionados anteriormente como por ejemplo:
 
-                java Main(2000,8,2000,100,0.5,0.6)
+                java Main 2000 8 2000 100 0.5 0.6
+
+Con la realización de todos los pasos mencionados anteriormente es posbible ejecutar el programa.
