@@ -11,25 +11,25 @@ Para poder realizar los siguientes paso primero se debe abrir la terminal de Lin
 
 - Lo primero es crear una carpeta en tu computadora, que servirá como un repositorio local, se debe tener en cuenta que el nombre del repositorio remoto y el repositorio local deben tener el mismo nombre, para este paso se puede utilizar el siguiente comando:
 
-           -  git init NombreCarpeta 
+            git init NombreCarpeta 
  
  Donde NombreCarpeta corresponde al nombre que se le quiere dar a la carpeta donde se almacenara el repositorio, por ejemplo:
      
-           - git init n_reinas
+            git init n_reinas
 
  Este comando creara una carpeta con el nombre n_reinas.
  
  - Luego si la carpeta se inicializa con exito se desplegara por pantalla un mensaje similar a:
  
-           - Initialized empty Git repository in /home/tu_usuario/n_reinas/.git/
+            Initialized empty Git repository in /home/tu_usuario/n_reinas/.git/
  
  - El siguiente paso es acceder a la carpeta del reporsitorio, para esto es necesario cambiarse de directorio con el comando cd, como el siguiente ejemplo, en caso de que la carpeta se llame n_reinas se de usar el comando de la siguiente forma:
  
-          - cd n_reinas
+           cd n_reinas
           
 - Luego se debe clonar el repositorio remoto en el repositorio local utilizando el siguiente comando:
  
-          - git clone https://github.com/likanmaster/8reinas.git
+          git clone https://github.com/likanmaster/8reinas.git
 
 - 
  
@@ -39,8 +39,8 @@ Para poder realizar los siguientes paso primero se debe abrir la terminal de Lin
 
 - Primero se debe compilar con la siguiente instrucción
 
-               - javac Main.java
+                javac Main.java
                
 - Una vez compilado el programa se debe ejecutar ingresando los parametros de entrada mencionados anteriormente como por ejemplo:
 
-               - java Main(2000,8,2000,100,0.5,0.6)
+                java Main(2000,8,2000,100,0.5,0.6)
