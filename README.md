@@ -9,7 +9,7 @@ Los parametros de entrada del algoritmo son: la semilla, el número de reinas, e
 Para la ejecución del algoritmo se deben seguir los siguientes pasos:
 Para poder realizar los siguientes paso primero se debe abrir la terminal de Linuc, y luego:
 
-1- Lo primero es crear una carpeta en tu computadora, que servirá como un repositorio local, se debe tener en cuenta que el nombre del repositorio remoto y el repositorio local deben tener el mismo nombre, para este paso se puede utilizar el siguiente comando:
+- Lo primero es crear una carpeta en tu computadora, que servirá como un repositorio local, se debe tener en cuenta que el nombre del repositorio remoto y el repositorio local deben tener el mismo nombre, para este paso se puede utilizar el siguiente comando:
 
            -  git init NombreCarpeta 
  
@@ -19,15 +19,15 @@ Para poder realizar los siguientes paso primero se debe abrir la terminal de Lin
 
  Este comando creara una carpeta con el nombre n_reinas.
  
- 2- Luego si la carpeta se inicializa con exito se desplegara por pantalla un mensaje similar a:
+ - Luego si la carpeta se inicializa con exito se desplegara por pantalla un mensaje similar a:
  
            - Initialized empty Git repository in /home/tu_usuario/n_reinas/.git/
  
- 3- El siguiente paso es acceder a la carpeta del reporsitorio, para esto es necesario cambiarse de directorio con el comando cd, como el siguiente ejemplo, en caso de que la carpeta se llame n_reinas se de usar el comando de la siguiente forma:
+ - El siguiente paso es acceder a la carpeta del reporsitorio, para esto es necesario cambiarse de directorio con el comando cd, como el siguiente ejemplo, en caso de que la carpeta se llame n_reinas se de usar el comando de la siguiente forma:
  
           - cd n_reinas
           
- 4- Luego se debe clonar el repositorio remoto en el repositorio local utilizando el siguiente comando:
+- Luego se debe clonar el repositorio remoto en el repositorio local utilizando el siguiente comando:
  
           - git clone https://github.com/likanmaster/8reinas.git
  
