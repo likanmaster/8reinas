@@ -382,7 +382,7 @@ public class Main {
             if (fit==0) {
                   //dibujo(tablero);
                   System.out.println(Arrays.toString(tablero));
-                  System.out.println("En generacion e");
+                  //System.out.println("En generacion e");
                   dibujo(tablero);
                   find=true;
                  
